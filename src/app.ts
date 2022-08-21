@@ -11,9 +11,7 @@ const app: Application = express();
 
 app.use(express.json());
 app.use(express.urlencoded());
-app.options('*',cors({
-    origin: "*"
-}));
+app.use(cors());
 
 app.use('/users', userRoute);
 app.use('/auth', authRoute);
