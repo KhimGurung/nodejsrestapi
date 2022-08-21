@@ -11,7 +11,9 @@ const app: Application = express();
 
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(cors());
+app.options('*',cors({
+    origin: "https://localhost:3000"
+}));
 
 app.use('/users', userRoute);
 app.use('/auth', authRoute);
