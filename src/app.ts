@@ -10,8 +10,7 @@ import { getRefreshToken } from './controllers/refresh_token_controller';
 const app: Application = express();
 
 app.use(cors({
-    'origin': 'https://localhost:3000',
-    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    'origin': 'https://localhost:3000'
 }));
 app.use(express.json());
 app.use(express.urlencoded());
