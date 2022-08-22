@@ -10,7 +10,7 @@ import { getRefreshToken } from './controllers/refresh_token_controller';
 const app: Application = express();
 
 app.use(cors({
-    'origin': 'https://localhost:3000'
+    'origin': 'https://reactjs-metamask.herokuapp.com/'
 }));
 app.use(express.json());
 app.use(express.urlencoded());
