@@ -9,11 +9,11 @@ import { getRefreshToken } from './controllers/refresh_token_controller';
 
 const app: Application = express();
 
-app.use(express.json());
-app.use(express.urlencoded());
-app.options('*',cors({
+app.use(cors({
     origin: "https://localhost:3000"
 }));
+app.use(express.json());
+app.use(express.urlencoded());
 
 app.use('/users', userRoute);
 app.use('/auth', authRoute);
