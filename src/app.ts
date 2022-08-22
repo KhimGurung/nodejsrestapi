@@ -11,7 +11,7 @@ const app: Application = express();
 
 app.use(cors({
     'origin': 'https://localhost:3000',
-    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE, OPTIONS',
+    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     'preflightContinue': false
   }));
 app.use(express.json());
