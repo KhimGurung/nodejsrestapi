@@ -12,6 +12,9 @@ const app: Application = express();
 app.use(cors({
     origin: "https://localhost:3000"
 }));
+app.options('*', cors({
+    origin: "https://localhost:3000"
+}));
 app.use(express.json());
 app.use(express.urlencoded());
 
