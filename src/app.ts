@@ -9,11 +9,17 @@ import { getRefreshToken } from './controllers/refresh_token_controller';
 
 const app: Application = express();
 
-app.use(cors({
-    'origin': 'https://localhost:3000',
-    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    'preflightContinue': false
-  }));
+// app.use(cors({
+//     'origin': 'https://localhost:3000',
+//     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+//     'preflightContinue': false
+//   }));
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://localhost:3000");
+    res.header('Access-Control-Allow-Methods', 'DELETE, PUT, GET, POST, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+ });
 app.use(express.json());
 app.use(express.urlencoded());
 
